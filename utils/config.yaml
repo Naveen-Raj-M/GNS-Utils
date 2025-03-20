@@ -1,0 +1,40 @@
+defaults:
+  - _self_
+  - override hydra/hydra_logging: disabled  
+  - override hydra/job_logging: disabled  
+
+hydra:
+  output_subdir: null  
+  run:
+    dir: .
+
+# domain configuration
+domain:
+  ndim: 2
+  x_bounds: [0.0, 1.5]
+  y_bounds: [0.0, 1.0]
+  dx: 0.025
+  dy: 0.025
+
+# particles configuration
+particles:
+  nparticle_per_dir: 4
+  x_bounds: [0.6, 0.9]
+  random_x_bounds: False
+  y_bounds: [0.0, 0.3]
+  randomness: 0.9
+  K0: null
+  density: null
+  initial_velocity: null
+
+# output configuration
+output:
+  path: '../test/'
+
+# mpm-inputs configuration
+mpm_inputs:
+  json_file: '../sand2d_1/mpm_input.json'
+  start_phi: 25
+  end_phi: 25
+  increment_phi: 5
+  n_files_per_phi: 1
